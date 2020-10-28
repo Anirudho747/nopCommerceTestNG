@@ -5,7 +5,8 @@
     <classes>
       <class name="testCase.Common">
         <methods>
-          <include name="allCases"/>
+          <include name="tearDownSuite"/>
+          <include name="allCases2"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>

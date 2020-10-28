@@ -12,21 +12,23 @@ import org.openqa.selenium.WebDriver;
 
 public class Snpsht {
 
+	public String clickpath;
 	
 	
-	
-	public void Snpshot(WebDriver driver) {
+	public String Snpshot(WebDriver driver) {
 		
 		try {
-		String path = "./src/test/resources/Clicks/ClickedAt"+getTime()+".png";	
+		clickpath = "./src/test/resources/Clicks/ClickedAt"+getTime()+".png";	
 		TakesScreenshot tss = (TakesScreenshot)driver;
 		File src = tss.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src, new File(path));
+		FileUtils.copyFile(src, new File(clickpath));
+		
 		} catch (IOException e) {
 			e.getCause();
 			e.getMessage();
 			System.out.println("Snpsht Class");
 		}
+		return clickpath;
 	}
 	
 	public String getTime()
